@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 13:20:15 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/08 10:45:38 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/10/08 11:49:02 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/10/08 12:23:00 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
+	int		x;
+	int		y;
 	char	*tmp;
-	size_t	x;
 
 	x = 0;
-	if (!s)
+	y = 0;
+	tmp = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!tmp)
 		return (NULL);
-	while (x < len)
-	{
-		tmp[x] = s[start + x];
-		x++;
-	}
+	while (s1[x])
+		tmp[y++] = s1[x++];
+	x = 0;
+	while (s2[x])
+		tmp[y++] = s2[x++];
 	tmp[x] = 0;
-	return (ft_strdup(tmp));
+	return (tmp);
 }

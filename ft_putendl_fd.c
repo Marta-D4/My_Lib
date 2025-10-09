@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 13:20:15 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/08 10:45:38 by madiaz-e         ###   ########.fr       */
+/*   Created: 2025/10/08 10:49:29 by madiaz-e          #+#    #+#             */
+/*   Updated: 2025/10/08 10:52:15 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*tmp;
-	size_t	x;
+	int	x;
 
 	x = 0;
-	if (!s)
-		return (NULL);
-	while (x < len)
+	while (s[x])
 	{
-		tmp[x] = s[start + x];
+		write(fd, &s[x], 1);
 		x++;
 	}
-	tmp[x] = 0;
-	return (ft_strdup(tmp));
+	write(fd, "\n", 1);
 }
