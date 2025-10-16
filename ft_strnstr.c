@@ -34,3 +34,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
+
+/*Busca la aparición de la cadena little en big
+limitando la busqueda a un max de len
+if (!little[0]) -- si es nulo, siempre se contiene en big
+while ((big[x + y] == little[y]) -- compara el char de big y little
+	&& big[x + y] -- que big no sea nulo
+	&& ((x + y) < len)) -- y que no exceda len
+if (little[y] == 0) -- cuando termina de copiar devuelve el ptr a
+	la primera coincidencia en big (big+x)
+*/
