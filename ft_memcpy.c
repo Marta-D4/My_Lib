@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:56:44 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/03 11:41:37 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/10/16 11:45:27 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/* Copia n bytes de memoria desde src a dest
+if (!src && !dest) --> no copia si los dos son nulos
+while (x < n) --> copia byte*byte desde src a dest
+	hace casteo pq void * no puede indexarse y unsigned char 
+	trabaja sin problemas con valores entre 0 y 255
+return (dest) --> retorna el puntero a dest
+EJ: char src[] = "Hola Mundo"; char dst[20];
+	ft_memcpy(dst, src, strlen(src)+1)
+	--> dst[20] = "Hola Mundo";
+*/
