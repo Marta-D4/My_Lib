@@ -6,7 +6,7 @@
 /*   By: madiaz-e <madiaz-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 11:49:02 by madiaz-e          #+#    #+#             */
-/*   Updated: 2025/10/08 12:23:00 by madiaz-e         ###   ########.fr       */
+/*   Updated: 2025/10/14 13:42:26 by madiaz-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	x = 0;
 	while (s2[x])
 		tmp[y++] = s2[x++];
-	tmp[x] = 0;
+	tmp[y] = 0;
 	return (tmp);
 }
