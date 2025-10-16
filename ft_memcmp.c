@@ -31,3 +31,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*Compara los primeros n bytes de dos bloques de memoria y
+devuelve el valor (+/-) dependiendo de la diff.
+str1 = (unsigned char *)s1; -- pq los void* necesitan ser un 
+	tipo especifico
+if (n == 0) -- si no hay nada que comparar retorna NULL
+if (str1[x] != str2[x]) -- cuando son diferentes devuelve la diff
+*/
